@@ -1,7 +1,6 @@
-// Add some interactivity to the website
 let step = 1;
 
-const handleSubmit = () => {
+const handleSubmit = (event) => {
   event.preventDefault();
   if (step === 1) {
     let subForm1 = document.getElementById("step1");
@@ -9,6 +8,7 @@ const handleSubmit = () => {
     subForm1.style.display = "none";
     subForm2.style.display = "block";
     step++;
+
     return false;
   }
   if (step === 2) {
@@ -17,6 +17,26 @@ const handleSubmit = () => {
     subForm2.style.display = "none";
     subForm3.style.display = "block";
     step++;
+
     return false;
   }
+
+  let form = document.getElementById("form");
+  const topics = [];
+  form.querySelectorAll('input[name="topics"]:checked').forEach((checkbox) => {
+    topics.push(checkbox.value);
+  });
+
+  const data = new FormData(event.target);
+  data.set("topics", topics);
+  const name = data.get("name");
+  const email = data.get("email");
+
+  // const topics = data.get("topics");
+  console.log(`Name: ${name}, Email: ${email}`);
+  console.log(`Topics: ${data.get("topics")}`);
+  return true;
 };
+
+let form = document.getElementById("form");
+form.addEventListener("submit", handleSubmit);

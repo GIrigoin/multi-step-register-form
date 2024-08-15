@@ -14,31 +14,46 @@
   </head>
   <body>
     <main>
-      <form action="" onsubmit="handleSubmit()">
+      <form action="" id="form">
         <section class="sub-form" id="step1">
           <h2>Register</h2>
-          <label for="">
+          <label for="name">
             Name
-            <input type="text" name="" id="" />
+            <input type="text" name="name" id="name" />
           </label>
-          <label for="">
+          <label for="email">
             Email
-            <input type="email" name="" id="" />
+            <input type="email" name="email" id="email" />
           </label>
         </section>
 
         <section class="sub-form" id="step2">
           <h2>Which topics you are interested in?</h2>
-          <label for="">
-            <input type="checkbox" name="topics" id="topics" />
+          <label for="soft-dev">
+            <input
+              type="checkbox"
+              name="topics"
+              id="soft-dev"
+              value="Software Development"
+            />
             Software Development
           </label>
-          <label for="">
-            <input type="checkbox" name="topics" id="topics" />
+          <label for="user-experience">
+            <input
+              type="checkbox"
+              name="topics"
+              id="user-experience"
+              value="User Experience"
+            />
             User Experience
           </label>
-          <label for="">
-            <input type="checkbox" name="topics" id="topics" />
+          <label for="graphic-design">
+            <input
+              type="checkbox"
+              name="topics"
+              id="graphic-design"
+              value="Graphic Design"
+            />
             Graphic Design
           </label>
         </section>
@@ -51,6 +66,14 @@
 
         <button>Submit</button>
       </form>
+      <div class="stepper-container">
+        <div>
+          <p class="stepper-text">Step 1 of 3</p>
+          <div class="stepper"></div>
+          <div class="stepper"></div>
+          <div class="stepper"></div>
+        </div>
+      </div>
     </main>
 
     <script src="./js/script.js"></script>
