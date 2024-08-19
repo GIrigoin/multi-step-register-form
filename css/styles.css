@@ -68,13 +68,35 @@ main {
   display: none;
 }
 
-.stepper {
+.stepper-active {
   box-sizing: content-box;
   width: 10px;
   height: 10px;
   border-radius: 100%;
   background-color: var(--button-color);
   box-shadow: 0px 0px 0px 4px var(--highlight-color);
+  margin: 16px;
+  /* border: solid 2px var(--highlight-color); */
+}
+
+.stepper-prev {
+  box-sizing: content-box;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: var(--button-color);
+  /* box-shadow: 0px 0px 0px 4px var(--highlight-color); */
+  margin: 16px;
+  /* border: solid 2px var(--highlight-color); */
+}
+
+.stepper-next {
+  box-sizing: content-box;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: var(--unselected-color);
+  /* box-shadow: 0px 0px 0px 4px var(--highlight-color); */
   margin: 16px;
   /* border: solid 2px var(--highlight-color); */
 }

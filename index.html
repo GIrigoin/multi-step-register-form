@@ -16,7 +16,7 @@
     <main>
       <form action="" id="form">
         <section class="sub-form" id="step1">
-          <h2>Register</h2>
+          <h2 class="title">Register</h2>
           <label for="name">
             Name
             <input
@@ -40,7 +40,7 @@
         </section>
 
         <section class="sub-form" id="step2">
-          <h2>Which topics you are interested in?</h2>
+          <h2 class="title">Which topics you are interested in?</h2>
           <label for="soft-dev">
             <input
               type="checkbox"
@@ -72,9 +72,15 @@
         </section>
 
         <section class="sub-form" id="step3">
-          <h2>Summary</h2>
-
-          <p>Topics</p>
+          <h2 class="title">Summary</h2>
+          <p class="summary-label">
+            Name: <span class="summary-item" id="summary-name"></span>
+          </p>
+          <p class="summary-label">
+            Email: <span class="summary-item" id="summary-email"></span>
+          </p>
+          <p class="summary-label">Topics:</p>
+          <!-- <ul id="topics-list"></ul> -->
         </section>
 
         <button id="submit">Continue</button>
@@ -82,9 +88,9 @@
       <div class="stepper-container">
         <div>
           <p class="stepper-text">Step <span id="step"></span> of 3</p>
-          <div class="stepper"></div>
-          <div class="stepper"></div>
-          <div class="stepper"></div>
+          <div id="stepper-1" class="stepper-active"></div>
+          <div id="stepper-2" class="stepper-next"></div>
+          <div id="stepper-3" class="stepper-next"></div>
         </div>
       </div>
     </main>

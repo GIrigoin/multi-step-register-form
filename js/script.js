@@ -12,6 +12,19 @@ const initializeForm = () => {
   emailInput.value = "";
   topicsInput.forEach((topics) => (topics.checked = false));
 
+  let subForm1 = document.getElementById("step1");
+  let subForm2 = document.getElementById("step2");
+  let subForm3 = document.getElementById("step3");
+  subForm1.style.display = "block";
+  subForm2.style.display = "none";
+  subForm3.style.display = "none";
+
+  let stepper1 = document.getElementById("stepper-1");
+  stepper1.className = "stepper-active";
+  let stepper2 = document.getElementById("stepper-2");
+  stepper2.className = "stepper-next";
+  let stepper3 = document.getElementById("stepper-3");
+  stepper3.className = "stepper-next";
   let submitButton = document.getElementById("submit");
   submitButton.disabled = true;
 };
@@ -56,6 +69,11 @@ const handleSubmit = (event) => {
     submitButton.disabled = true;
     stepSpan.innerText = step;
 
+    let stepper1 = document.getElementById("stepper-1");
+    stepper1.className = "stepper-prev";
+    let stepper2 = document.getElementById("stepper-2");
+    stepper2.className = "stepper-active";
+
     return false;
   }
   if (step === 2) {
@@ -67,6 +85,38 @@ const handleSubmit = (event) => {
     submitButton.innerText = "Confirm";
     step++;
     stepSpan.innerText = step;
+
+    let form = document.getElementById("form");
+    const topics = [];
+    form
+      .querySelectorAll('input[name="topics"]:checked')
+      .forEach((checkbox) => {
+        topics.push(checkbox.value);
+      });
+    const data = new FormData(event.target);
+    const name = data.get("name");
+    const email = data.get("email");
+
+    let nameSpan = document.getElementById("summary-name");
+    nameSpan.innerText = name;
+    let emailSpan = document.getElementById("summary-email");
+    emailSpan.innerText = email;
+
+    let topicsList = document.createElement("ul");
+    topicsList.className = "topics-list";
+    topics.forEach((topic) => {
+      const item = document.createElement("li");
+      item.className = "summary-item";
+      item.innerText = topic;
+      topicsList.append(item);
+    });
+
+    subForm3.append(topicsList);
+
+    let stepper2 = document.getElementById("stepper-2");
+    stepper2.className = "stepper-prev";
+    let stepper3 = document.getElementById("stepper-3");
+    stepper3.className = "stepper-active";
 
     return false;
   }
@@ -89,6 +139,13 @@ const handleSubmit = (event) => {
   console.log(`Name: ${name}, Email: ${email}`);
   console.log(`Topics: ${topics}`);
   alert("✅ Success");
+
+  let subForm3 = document.getElementById("step3");
+
+  let topicsList = subForm3.getElementsByClassName("topics-list");
+  if (topicsList) {
+    subForm3.removeChild(topicsList[0]);
+  }
   initializeForm();
   return true;
 };
