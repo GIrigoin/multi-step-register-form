@@ -19,12 +19,24 @@
           <h2>Register</h2>
           <label for="name">
             Name
-            <input type="text" name="name" id="name" />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="enter your name"
+            />
           </label>
+          <p class="error" id="name-error"></p>
           <label for="email">
             Email
-            <input type="email" name="email" id="email" />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="example@mail.com"
+            />
           </label>
+          <p class="error" id="email-error"></p>
         </section>
 
         <section class="sub-form" id="step2">
@@ -56,6 +68,7 @@
             />
             Graphic Design
           </label>
+          <p class="error" id="topics-error"></p>
         </section>
 
         <section class="sub-form" id="step3">
@@ -64,11 +77,11 @@
           <p>Topics</p>
         </section>
 
-        <button>Submit</button>
+        <button id="submit">Continue</button>
       </form>
       <div class="stepper-container">
         <div>
-          <p class="stepper-text">Step 1 of 3</p>
+          <p class="stepper-text">Step <span id="step"></span> of 3</p>
           <div class="stepper"></div>
           <div class="stepper"></div>
           <div class="stepper"></div>
