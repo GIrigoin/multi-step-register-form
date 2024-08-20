@@ -17,26 +17,26 @@
       <form action="" id="form">
         <section class="sub-form" id="step1">
           <h2 class="title">Register</h2>
-          <label for="name">
-            Name
+          <div class="input-container">
+            <label class="text-label" for="name"> Name </label>
             <input
               type="text"
               name="name"
               id="name"
               placeholder="enter your name"
             />
-          </label>
-          <p class="error" id="name-error"></p>
-          <label for="email">
-            Email
+            <p class="error" id="name-error"></p>
+          </div>
+          <div class="input-container">
+            <label class="text-label" for="email"> Email </label>
             <input
               type="email"
               name="email"
               id="email"
               placeholder="example@mail.com"
             />
-          </label>
-          <p class="error" id="email-error"></p>
+            <p class="error" id="email-error"></p>
+          </div>
         </section>
 
         <section class="sub-form" id="step2">
@@ -83,15 +83,17 @@
           <!-- <ul id="topics-list"></ul> -->
         </section>
 
-        <button id="submit">Continue</button>
+        <button id="submit">
+          <div>e</div>
+          Continue
+          <div>e</div>
+        </button>
       </form>
       <div class="stepper-container">
-        <div>
-          <p class="stepper-text">Step <span id="step"></span> of 3</p>
-          <div id="stepper-1" class="stepper-active"></div>
-          <div id="stepper-2" class="stepper-next"></div>
-          <div id="stepper-3" class="stepper-next"></div>
-        </div>
+        <p class="stepper-text">Step <span id="step"></span> of 3</p>
+        <div id="stepper-1" class="stepper-active"></div>
+        <div id="stepper-2" class="stepper-next"></div>
+        <div id="stepper-3" class="stepper-next"></div>
       </div>
     </main>
 

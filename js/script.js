@@ -15,7 +15,7 @@ const initializeForm = () => {
   let subForm1 = document.getElementById("step1");
   let subForm2 = document.getElementById("step2");
   let subForm3 = document.getElementById("step3");
-  subForm1.style.display = "block";
+  subForm1.style.display = "flex";
   subForm2.style.display = "none";
   subForm3.style.display = "none";
 
@@ -26,6 +26,7 @@ const initializeForm = () => {
   let stepper3 = document.getElementById("stepper-3");
   stepper3.className = "stepper-next";
   let submitButton = document.getElementById("submit");
+  submitButton.innerText = "Continue";
   submitButton.disabled = true;
 };
 
@@ -64,7 +65,7 @@ const handleSubmit = (event) => {
     let subForm1 = document.getElementById("step1");
     let subForm2 = document.getElementById("step2");
     subForm1.style.display = "none";
-    subForm2.style.display = "block";
+    subForm2.style.display = "flex";
     step++;
     submitButton.disabled = true;
     stepSpan.innerText = step;
@@ -81,7 +82,7 @@ const handleSubmit = (event) => {
     let subForm3 = document.getElementById("step3");
 
     subForm2.style.display = "none";
-    subForm3.style.display = "block";
+    subForm3.style.display = "flex";
     submitButton.innerText = "Confirm";
     step++;
     stepSpan.innerText = step;
