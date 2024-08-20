@@ -5,7 +5,9 @@
   --background-color: #212936;
   --background-color-2: #652cd1;
   --button-color: #845eee;
-  --highlight-color: #845eee8a;
+  --disabled-button: #867aa8;
+  --highlight-button: rgb(161, 132, 241);
+  --highlight-color: #845eee63;
   --unselected-color: rgb(161, 161, 169);
   --unselected-background: #4d5562;
   --incomplete-stepper: #394150;
@@ -78,10 +80,6 @@ form {
   display: flex;
   flex-direction: column;
 }
-h2 {
-  font-size: 20px;
-  font-weight: 500;
-}
 
 input[type="text"],
 input[type="email"] {
@@ -96,6 +94,19 @@ input[type="email"] {
   font-weight: 600;
 }
 
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  /* Not removed via appearance */
+  margin: 0;
+}
+input[type="checkbox"]:checked + label {
+  background-color: var(--button-color);
+  color: white;
+}
+
 #step2,
 #step3 {
   display: none;
@@ -103,6 +114,42 @@ input[type="email"] {
 
 #submit {
   align-self: center;
+  width: 128px;
+  height: 40px;
+  /* background-color: var(--button-color); */
+  background: linear-gradient(
+    135deg,
+    var(--button-color),
+    var(--background-color-2)
+  );
+  border: none;
+  color: var(--color);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 32px;
+
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      var(--button-color),
+      var(--highlight-button)
+    );
+  }
+  &:disabled {
+    background: linear-gradient(
+      135deg,
+      var(--disabled-button),
+      var(--button-color)
+    );
+    cursor: not-allowed;
+    color: var(--unselected-color);
+  }
 }
 
 .sub-form {
@@ -110,7 +157,13 @@ input[type="email"] {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  height: 80%;
+  height: 85%;
+  /* margin-bottom: 24px; */
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
   margin-bottom: 24px;
 }
 
@@ -132,6 +185,32 @@ input[type="email"] {
   font-weight: 600;
   color: var(--color);
   margin-top: 8px;
+}
+
+.topics-label {
+  box-sizing: content-box;
+  width: 374px;
+  height: 67px;
+  border: solid 1px var(--unselected-background);
+  border-radius: 12px;
+  padding-left: 12px;
+  padding-top: 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: var(--form-bg);
+  color: var(--unselected-color);
+  margin-bottom: 16px;
+}
+
+.summary-label {
+  color: var(--unselected-color);
+}
+.summary-item {
+  color: var(--color);
+}
+.topics-list {
+  list-style-position: inside;
 }
 
 .stepper-container {

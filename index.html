@@ -41,46 +41,54 @@
 
         <section class="sub-form" id="step2">
           <h2 class="title">Which topics you are interested in?</h2>
-          <label for="soft-dev">
-            <input
-              type="checkbox"
-              name="topics"
-              id="soft-dev"
-              value="Software Development"
-            />
+
+          <input
+            type="checkbox"
+            name="topics"
+            id="soft-dev"
+            value="Software Development"
+          />
+          <label for="soft-dev" class="topics-label">
             Software Development
           </label>
-          <label for="user-experience">
-            <input
-              type="checkbox"
-              name="topics"
-              id="user-experience"
-              value="User Experience"
-            />
+
+          <input
+            type="checkbox"
+            name="topics"
+            id="user-experience"
+            value="User Experience"
+          />
+          <label for="user-experience" class="topics-label">
             User Experience
           </label>
-          <label for="graphic-design">
-            <input
-              type="checkbox"
-              name="topics"
-              id="graphic-design"
-              value="Graphic Design"
-            />
+
+          <input
+            type="checkbox"
+            name="topics"
+            id="graphic-design"
+            value="Graphic Design"
+          />
+          <label for="graphic-design" class="topics-label">
             Graphic Design
           </label>
+
           <p class="error" id="topics-error"></p>
         </section>
 
         <section class="sub-form" id="step3">
           <h2 class="title">Summary</h2>
-          <p class="summary-label">
-            Name: <span class="summary-item" id="summary-name"></span>
-          </p>
-          <p class="summary-label">
-            Email: <span class="summary-item" id="summary-email"></span>
-          </p>
-          <p class="summary-label">Topics:</p>
-          <!-- <ul id="topics-list"></ul> -->
+          <div>
+            <p class="summary-label">
+              Name: <span class="summary-item" id="summary-name"></span>
+            </p>
+            <p class="summary-label">
+              Email: <span class="summary-item" id="summary-email"></span>
+            </p>
+          </div>
+          <div>
+            <p class="summary-label">Topics:</p>
+            <ul id="topics-list" class="topics-list"></ul>
+          </div>
         </section>
 
         <button id="submit">

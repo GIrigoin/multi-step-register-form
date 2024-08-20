@@ -103,8 +103,7 @@ const handleSubmit = (event) => {
     let emailSpan = document.getElementById("summary-email");
     emailSpan.innerText = email;
 
-    let topicsList = document.createElement("ul");
-    topicsList.className = "topics-list";
+    let topicsList = document.getElementById("topics-list");
     topics.forEach((topic) => {
       const item = document.createElement("li");
       item.className = "summary-item";
